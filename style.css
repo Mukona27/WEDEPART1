@@ -1,0 +1,429 @@
+/* =========================
+   Code Smart — style.css
+   Complete consolidated stylesheet
+   Includes: nav, header, hero, CTA, tutorials, lesson pages, forms, footer, responsiveness
+   Colors: #001f4d (deep navy), #003366 (navy), #00bfff (accent/cyan)
+   ========================= */
+
+/* ---------------- Body & Fonts ---------------- */
+html, body {
+    background-color: #001f4d;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------- Navigation ---------------- */
+nav {
+    background-color: #003366;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* left area (logo + brand) */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* logo */
+.logo {
+    height: 35px;    /* small & consistent */
+    width: auto;
+    margin-right: 10px;
+    display: inline-block;
+    object-fit: contain;
+}
+
+/* brand text */
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+}
+
+/* right area links */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* base link styling */
+.nav-right a,
+nav a {
+    color: white; /* default white */
+    text-decoration: none;
+    padding: 10px 16px;
+    margin: 0 4px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    background-color: rgba(255,255,255,0.05); /* subtle pill */
+}
+
+/* visited/active states - force white so no purple links */
+.nav-right a:link,
+.nav-right a:visited,
+nav a:link,
+nav a:visited {
+    color: #ffffff;
+}
+
+/* hover & active */
+.nav-right a:hover,
+nav a:hover,
+.nav-right a:active,
+nav a:active {
+    background-color: #00bfff;
+    color: #001f4d;
+    transform: translateY(-1px);
+}
+
+/* ---------------- Header / Hero ---------------- */
+header {
+    text-align: center;
+    padding: 44px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 6px 0;
+    line-height: 1.05;
+}
+
+header p {
+    font-size: 20px;
+    color: #d0d8e8;
+    margin-top: 8px;
+}
+
+/* hero image */
+.hero-img {
+    max-width: 70%;
+    width: 320px;   /* default desktop size */
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 18px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    border: 3px solid #00bfff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+/* ---------------- CTA Bar / Start Now ---------------- */
+.cta-bar {
+    text-align: center;
+    margin: 28px auto;
+    padding: 18px 20px;
+    background: linear-gradient(90deg, #003366, #001f4d);
+    border-radius: 10px;
+    max-width: 640px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.cta-bar h2 {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* CTA button consistent class */
+.cta-btn,
+button.cta-btn {
+    background-color: #00bfff;
+    color: #001f4d;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.cta-btn:hover,
+button.cta-btn:hover {
+    background-color: #009acd;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* ---------------- Generic sections & containers ---------------- */
+.section {
+    display: block;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #00bfff;
+    margin-bottom: 10px;
+}
+
+.section p {
+    color: #d0d8e8;
+}
+
+/* ---------------- Tutorials Hub (grid of boxes) ---------------- */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.tutorial-box {
+    background-color: #00264d;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: transform 0.28s ease, background-color 0.28s ease;
+}
+
+.tutorial-box:hover {
+    background-color: #003366;
+    transform: translateY(-6px);
+}
+
+.tutorial-box h3 {
+    color: #00bfff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.tutorial-box p {
+    color: #d0d8e8;
+    margin-bottom: 14px;
+}
+
+/* tutorial box button (reuse .cta-btn) */
+.tutorial-box .cta-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* ---------------- Tutorial Lesson Pages ---------------- */
+.tutorial-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.lesson-box {
+    background-color: #00264d;
+    margin: 18px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.22s ease;
+}
+
+.lesson-box:hover {
+    transform: translateY(-4px);
+}
+
+.lesson-box h3 {
+    color: #00bfff;
+    margin-bottom: 8px;
+}
+
+/* code blocks */
+pre, code {
+    display: block;
+    background-color: #001a33;
+    color: #e6f7ff;
+    padding: 12px;
+    border-radius: 8px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre;
+    line-height: 1.45;
+}
+
+/* scrollbar for code (webkit) */
+pre::-webkit-scrollbar {
+    height: 8px;
+}
+pre::-webkit-scrollbar-thumb {
+    background: #00bfff;
+    border-radius: 8px;
+}
+
+/* ---------------- Forms (login/register/contact) ---------------- */
+.form-container {
+    max-width: 420px;
+    margin: 40px auto;
+    background-color: #00264d;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    color: white;
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #00bfff;
+    margin-bottom: 16px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container textarea,
+.form-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #0d1b2a;
+    color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    box-shadow: 0 0 0 3px rgba(0,191,255,0.12);
+    background-color: #13294b;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #00bfff;
+    color: #001f4d;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.form-container button:hover {
+    background-color: #009acd;
+    transform: translateY(-2px);
+}
+
+/* small helper for inline links inside forms */
+.form-container a {
+    color: #00bfff;
+}
+
+/* ---------------- Lists ---------------- */
+ul, ol {
+    color: #d0d8e8;
+    padding-left: 22px;
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    background: linear-gradient(90deg, #003366, #001f4d);
+    text-align: center;
+    padding: 18px 12px;
+    color: #ffffff;
+    font-size: 14px;
+    border-top: 2px solid #00bfff;
+    margin-top: 40px;
+}
+
+/* footer links (if any) */
+footer a,
+footer a:visited {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.95;
+}
+
+footer a:hover {
+    color: #00bfff;
+}
+
+/* ---------------- Utility helpers ---------------- */
+.container {
+    background-color: #00264d;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* text helpers */
+.lead {
+    color: #d0d8e8;
+    font-size: 18px;
+}
+
+/* small muted text */
+.small-muted {
+    color: rgba(208,216,232,0.7);
+    font-size: 14px;
+}
+
+/* ---------------- Responsive Breakpoints ---------------- */
+@media (max-width: 992px) {
+    header h1 { font-size: 40px; }
+    .hero-img { width: 280px; }
+    .cta-bar { max-width: 90%; padding: 16px; }
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 34px; }
+    header p { font-size: 18px; }
+    .nav-right { gap: 4px; }
+    nav { padding: 10px 12px; }
+    .hero-img { width: 260px; }
+    .tutorial-grid { padding: 20px; gap: 16px; }
+    .form-container { margin: 28px 12px; padding: 18px; }
+}
+
+@media (max-width: 520px) {
+    .logo { height: 30px; }
+    .brand { font-size: 18px; }
+    .nav-right a { padding: 8px 10px; font-size: 14px; }
+    header h1 { font-size: 28px; }
+    .hero-img { width: 220px; }
+    .cta-bar { padding: 14px; max-width: 92%; }
+    .tutorial-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+}
+
+@media (max-width: 420px) {
+    header h1 { font-size: 24px; }
+    .hero-img { width: 200px; }
+    .cta-btn, .tutorial-box .cta-btn { padding: 9px 16px; font-size: 14px; }
+    .form-container { padding: 14px; }
+    footer { font-size: 13px; }
+}
+
+/* final tiny screens */
+@media (max-width: 360px) {
+    .logo { height: 28px; }
+    header h1 { font-size: 20px; }
+    .hero-img { width: 180px; }
+    .tutorial-grid { padding: 12px; gap: 12px; }
+}
