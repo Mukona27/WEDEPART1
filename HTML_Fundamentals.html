@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Fundamentals | Code Smart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="tutorials.html">Tutorials</a>
+</nav>
+
+<!-- Header -->
+<header>
+  <h1>HTML Fundamentals</h1>
+  <p>Step-by-step lessons with examples for beginners</p>
+</header>
+
+<!-- Fundamentals Section -->
+<div class="fundamentals">
+
+  <!-- Lesson 1 -->
+  <div class="lesson-box">
+    <h3>1. What is HTML?</h3>
+    <p>HTML (HyperText Markup Language) structures content for the web.</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>Try it: Save as <code>index.html</code> and open in your browser.</p>
+  </div>
+
+  <!-- Lesson 2 -->
+  <div class="lesson-box">
+    <h3>2. Headings & Paragraphs</h3>
+    <p>Use headings (<code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>) and paragraphs (<code>&lt;p&gt;</code>).</p>
+    <pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Sub Heading&lt;/h2&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 3 -->
+  <div class="lesson-box">
+    <h3>3. Links</h3>
+    <p>Create hyperlinks with <code>&lt;a&gt;</code>.</p>
+    <pre>
+&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 4 -->
+  <div class="lesson-box">
+    <h3>4. Images</h3>
+    <p>Add images with <code>&lt;img&gt;</code>. Include <code>alt</code> for accessibility.</p>
+    <pre>
+&lt;img src="image.jpg" alt="My Picture" width="200"&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 5 -->
+  <div class="lesson-box">
+    <h3>5. Lists</h3>
+    <p>Organize items with ordered or unordered lists.</p>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 6 -->
+  <div class="lesson-box">
+    <h3>6. Tables</h3>
+    <p>Display data in rows and columns using <code>&lt;table&gt;</code>.</p>
+    <pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Mukona&lt;/td&gt;
+    &lt;td&gt;18&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 7 -->
+  <div class="lesson-box">
+    <h3>7. Forms</h3>
+    <p>Collect user input with <code>&lt;form&gt;</code>.</p>
+    <pre>
+&lt;form&gt;
+  Name: &lt;input type="text"&gt;&lt;br&gt;
+  Email: &lt;input type="email"&gt;&lt;br&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 8 -->
+  <div class="lesson-box">
+    <h3>8. Semantic Elements</h3>
+    <p>Use semantic tags like <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>.</p>
+    <pre>
+&lt;header&gt;Header Content&lt;/header&gt;
+&lt;nav&gt;Navigation Links&lt;/nav&gt;
+&lt;section&gt;Main Section&lt;/section&gt;
+&lt;footer&gt;Footer Content&lt;/footer&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 9 -->
+  <div class="lesson-box">
+    <h3>9. Multimedia</h3>
+    <p>Add audio and video using <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code>.</p>
+    <pre>
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video width="320" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 10 -->
+  <div class="lesson-box">
+    <h3>10. HTML Entities</h3>
+    <p>Special characters are represented using HTML entities.</p>
+    <pre>
+&amp;lt; = &lt;   &amp;gt; = &gt;   &amp;amp; = &amp;
+    </pre>
+  </div>
+
+  <!-- Lesson 11 -->
+  <div class="lesson-box">
+    <h3>11. HTML Attributes</h3>
+    <p>Attributes provide extra information about elements (like <code>id</code>, <code>class</code>, <code>src</code>, <code>href</code>).</p>
+    <pre>
+&lt;img src="image.jpg" alt="My Image"&gt;
+&lt;a href="https://google.com"&gt;Link&lt;/a&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 12 -->
+  <div class="lesson-box">
+    <h3>12. Div & Span</h3>
+    <p>Use <code>&lt;div&gt;</code> for block-level grouping and <code>&lt;span&gt;</code> for inline grouping.</p>
+    <pre>
+&lt;div&gt;
+  &lt;p&gt;This is inside a div.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;span&gt;This is inline text.&lt;/span&gt;
+    </pre>
+  </div>
+
+  <!-- Lesson 13 -->
+  <div class="lesson-box">
+    <h3>13. Comments & Best Practices</h3>
+    <p>Use comments to explain code. Follow indentation and semantic structure for clean code.</p>
+    <pre>
+&lt;!-- This is a comment --&gt;
+    </pre>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Code Smart | Created by Mukona | All Rights Reserved
+</footer>
+
+</body>
+</html>
