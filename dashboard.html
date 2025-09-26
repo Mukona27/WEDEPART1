@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | Last Push</title>
+  <style>
+    body {
+      background-color: #001b3a;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #00bfff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Your Dashboard</h1>
+  <p>Hello, <span id="username"></span>!</p>
+  <p>
+    <a href="module-selection.html">Select Modules</a> |
+    <a href="slides.html">View Slides</a> |
+    <a href="upload-slides.html">Upload Slides</a> |
+    <a href="logout.php">Logout</a>
+  </p>
+
+  <script>
+    // Show username from sessionStorage (or redirect if none)
+    const username = sessionStorage.getItem('username');
+    if (!username) {
+      window.location.href = 'login.html';
+    } else {
+      document.getElementById('username').textContent = username;
+    }
+  </script>
+</body>
+</html>
