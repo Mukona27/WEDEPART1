@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Fundamentals | Code Smart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/Coding Symbol in Blue.png" alt="Logo" class="logo">
+      <span class="brand">Code Smart</span>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="tutorials.html" class="active">Tutorials</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+   <section class="lesson-card">
+  <h2>1. Introduction to Internal CSS</h2>
+  <p>Learn what internal CSS is, how it works, and when to use it.</p>
+
+  <!-- Video -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/egr_BJJ4nMg" title="Introduction to Internal CSS" allowfullscreen></iframe>
+  </div>
+
+  <!-- PDF -->
+  <div class="lesson-doc">
+    <a href="#" target="_blank">Download PDF</a>
+  </div>
+
+  <!-- Exercises -->
+  
+
+
+    <!-- LESSON 2 -->
+    <section class="lesson-card">
+      <h2>2. CSS Syntax (Basics)</h2>
+      <p>Understand selectors, properties, and how CSS rules are structured.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/p6AVpIJeaE4" title="CSS Syntax Basics" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-doc">
+        <a href="#" target="_blank">Download PDF</a>
+      </div>
+      <div class="exercise">
+        <p><strong>Exercise:</strong> Make all paragraphs blue and bold.</p>
+        <button onclick="showSolution('solution-2')">Show Solution</button>
+        <div id="solution-2" class="solution" style="display:none;">
+<pre>
+p {
+  color: blue;
+  font-weight: bold;
+}
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON 3 -->
+    <section class="lesson-card">
+      <h2>3. Introduction to Inline CSS</h2>
+      <p>Learn how to style elements using inline CSS with the style attribute.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/_ho-tawlwWs" title="Introduction to Inline CSS" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-doc">
+        <a href="#" target="_blank">Download PDF</a>
+      </div>
+      <div class="exercise">
+        <p><strong>Exercise:</strong> Make one paragraph text green and italic.</p>
+        <button onclick="showSolution('solution-3')">Show Solution</button>
+        <div id="solution-3" class="solution" style="display:none;">
+<pre>
+p {
+  color: green;
+  font-style: italic;
+}
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON 4 -->
+    <section class="lesson-card">
+      <h2>4. CSS Syntax (Advanced)</h2>
+      <p>A deeper look at how selectors, classes, and IDs work in CSS.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/3Oq1lQkkVtE" title="CSS Syntax Advanced" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-doc">
+        <a href="#" target="_blank">Download PDF</a>
+      </div>
+      <div class="exercise">
+        <p><strong>Exercise:</strong> Make all headings orange and add 20px margin.</p>
+        <button onclick="showSolution('solution-4')">Show Solution</button>
+        <div id="solution-4" class="solution" style="display:none;">
+<pre>
+h1, h2, h3, h4, h5, h6 {
+  color: orange;
+  margin: 20px;
+}
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON 5 -->
+    <section class="lesson-card">
+      <h2>5. Introduction to External CSS</h2>
+      <p>Learn why external CSS is the best and most professional way to style pages.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/T38dIJh8iRc" title="Introduction to External CSS" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-doc">
+        <a href="#" target="_blank">Download PDF</a>
+      </div>
+      <div class="exercise">
+        <p><strong>Exercise:</strong> Link an external CSS file and make headings blue.</p>
+        <button onclick="showSolution('solution-5')">Show Solution</button>
+        <div id="solution-5" class="solution" style="display:none;">
+<pre>
+h1, h2, h3 {
+  color: blue;
+}
+</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- LESSON 6 -->
+    <section class="lesson-card">
+      <h2>6. External CSS Syntax</h2>
+      <p>Understand how CSS files use classes, IDs, and selectors to control styling.</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Kt1AozWNNVQ" title="External CSS Syntax" allowfullscreen></iframe>
+      </div>
+      <div class="lesson-doc">
+        <a href="#" target="_blank">Download PDF</a>
+      </div>
+      <div class="exercise">
+        <p><strong>Exercise:</strong> Use class and ID selectors to change colors.</p>
+        <button onclick="showSolution('solution-6')">Show Solution</button>
+        <div id="solution-6" class="solution" style="display:none;">
+<pre>
+#unique {
+  color: purple;
+}
+.myClass {
+  color: pink;
+}
+</pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Code Smart | Created by Mukona
+  </footer>
+
+  <script>
+    // SHOW USERNAME
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) window.location.href = "login.html";
+    else document.getElementById("username").textContent = user.name;
+
+    // LOGOUT BUTTON
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    });
+
+    // SHOW SOLUTION
+    function showSolution(solutionId) {
+      document.getElementById(solutionId).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

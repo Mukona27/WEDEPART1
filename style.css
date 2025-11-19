@@ -427,3 +427,795 @@ footer a:hover {
     .hero-img { width: 180px; }
     .tutorial-grid { padding: 12px; gap: 12px; }
 }
+/* ---------------- Code Output Section (Tutorials) ---------------- */
+.output-box {
+    background-color: #001a33;  /* matches code background */
+    border-left: 4px solid #00bfff;
+    padding: 14px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #e6f7ff;
+    font-family: "Courier New", monospace;
+}
+
+.output-box b {
+    color: #00bfff;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.output-content {
+    background-color: #00264d;
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: #ffffff;
+    font-family: "Consolas", monospace;
+    font-size: 14px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+    line-height: 1.5;
+    overflow-x: auto;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002b5c;
+  color: white;
+  padding: 15px 20px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Links */
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    background-color: #002b5c;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding: 10px;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+/* =========================
+   Code Smart — style.css
+   Unified stylesheet with animated hamburger navbar
+   Colors: #001f4d (deep navy), #003366 (navy), #00bfff (accent)
+   ========================= */
+
+/* ---------------- Body & Fonts ---------------- */
+html, body {
+    background-color: #001f4d;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Left side: logo + brand */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Right side links */
+.nav-right {
+  display: flex;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: rgba(255,255,255,0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.nav-right a:hover {
+  background-color: #00bfff;
+  color: #001f4d;
+  transform: translateY(-2px);
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-icon div {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Hamburger Animation: turns into “X” */
+.menu-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.menu-icon.open .bar2 {
+  opacity: 0;
+}
+.menu-icon.open .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Responsive Nav Menu */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding: 10px;
+    border-left: 2px solid #00bfff;
+    box-shadow: -2px 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+
+/* ---------------- Header / Hero ---------------- */
+header {
+    text-align: center;
+    padding: 44px 20px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 6px 0;
+    line-height: 1.05;
+}
+
+header p {
+    font-size: 20px;
+    color: #d0d8e8;
+    margin-top: 8px;
+}
+
+/* hero image */
+.hero-img {
+    max-width: 70%;
+    width: 320px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 18px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    border: 3px solid #00bfff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+/* ---------------- CTA Bar ---------------- */
+.cta-bar {
+    text-align: center;
+    margin: 28px auto;
+    padding: 18px 20px;
+    background: linear-gradient(90deg, #003366, #001f4d);
+    border-radius: 10px;
+    max-width: 640px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.cta-bar h2 {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.cta-btn {
+    background-color: #00bfff;
+    color: #001f4d;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.cta-btn:hover {
+    background-color: #009acd;
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* ---------------- Footer ---------------- */
+footer {
+    background: linear-gradient(90deg, #003366, #001f4d);
+    text-align: center;
+    padding: 18px 12px;
+    color: #ffffff;
+    font-size: 14px;
+    border-top: 2px solid #00bfff;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #00bfff;
+}
+
+/* ---------------- Responsive Text Tweaks ---------------- */
+@media (max-width: 520px) {
+  header h1 { font-size: 28px; }
+  .hero-img { width: 220px; }
+  .cta-bar { padding: 14px; max-width: 92%; }
+}
+
+.fundamentals-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.fundamental-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #1b2b60;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.fundamental-btn:hover {
+  background-color: #0099cc;
+}
+
+.sign-in-button {
+  background-color: white; /* Change to white */
+  color: rgb(242, 237, 237); /* Change text color to black for contrast */
+  border: 1px solid #ccc; /* Optional: add a light border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.sign-in-button:hover {
+  background-color: #f0f0f0; /* Optional: change background on hover */
+}
+.sign-in-button {
+    background-color: #00bfff;   /* bright cyan accent */
+    color: #001f4d;              /* dark text for contrast */
+    border: none;                /* no border needed */
+    padding: 12px 20px;          /* comfortable size */
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.sign-in-button:hover {
+    background-color: #009acd;   /* darker cyan on hover */
+    transform: translateY(-2px);
+}
+/* Lesson Cards */
+.lesson-card {
+  background-color: #f0f4f8; /* light gray background */
+  border: 1px solid #d1d7e0; /* subtle border */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Lesson Titles */
+.lesson-card h2 {
+  color: #007bff; /* primary website blue */
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.lesson-card p {
+  color: #333; /* dark gray text for readability */
+  margin-bottom: 15px;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* PDF Links */
+.lesson-doc a {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.lesson-doc a:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
+
+/* Exercise Button */
+.exercises button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #28a745;
+  color: rgb(4, 1, 20);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exercises button:hover {
+  background-color: #1e1154;
+}
+
+/* Solution Box */
+.solution {
+  background-color: #011c37;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: monospace;
+  color: #333;
+}
+/* =========================
+   CSS for Code Smart Tutorial Page
+   Colors: #001f4d (deep navy), #003366 (navy), #00bfff (accent/cyan)
+   ========================= */
+
+/* ---------------- Body & Fonts ---------------- */
+body {
+  background-color: #001f4d;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: rgba(255,255,255,0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.nav-right a:hover {
+  background-color: #00bfff;
+  color: #001f4d;
+  transform: translateY(-2px);
+}
+
+#logoutBtn {
+  background-color: #00bfff;
+  color: #001f4d;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#logoutBtn:hover {
+  background-color: #009acd;
+  transform: translateY(-2px);
+}
+
+/* ---------------- Header / Hero ---------------- */
+header {
+  text-align: center;
+  padding: 44px 20px;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 6px 0;
+}
+
+header p {
+  font-size: 20px;
+  color: #d0d8e8;
+  margin-top: 8px;
+}
+
+/* ---------------- Tutorial Content ---------------- */
+.tutorial-content {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* ---------------- Lesson Cards ---------------- */
+.lesson-card {
+  background-color: #00264d; 
+  border: 1px solid #003366;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.22s ease;
+}
+
+.lesson-card:hover {
+  transform: translateY(-3px);
+}
+
+.lesson-card h2 {
+  color: #00bfff;
+  margin-bottom: 12px;
+}
+
+.lesson-card p {
+  color: #d0d8e8;
+  margin-bottom: 15px;
+}
+
+/* ---------------- Video Container ---------------- */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* ---------------- PDF Links ---------------- */
+.lesson-doc a {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background-color: #00bfff;
+  color: #001f4d;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.lesson-doc a:hover {
+  background-color: #0056b3;
+}
+
+/* ---------------- Exercises ---------------- */
+.exercises button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #28a745;
+  color: #001f4d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.exercises button:hover {
+  background-color: #1e7e34;
+}
+
+/* ---------------- Solutions ---------------- */
+.solution {
+  background-color: #001a33;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: monospace;
+  color: #e6f7ff;
+  overflow-x: auto;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 768px) {
+  header h1 { font-size: 34px; }
+  header p { font-size: 18px; }
+}
+
+@media (max-width: 520px) {
+  header h1 { font-size: 28px; }
+  .video-container { padding-bottom: 50%; }
+}
+/* ---------------- Navbar ---------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003366;
+  color: white;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 16px;
+  transition: all 0.3s ease;
+  position: relative; /* ensures dropdown stays above content */
+  z-index: 1000;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: rgba(255,255,255,0.05);
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.nav-right a:hover {
+  background-color: #00bfff;
+  color: #001f4d;
+  transform: translateY(-2px);
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu-icon.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+.menu-icon.open .bar2 {
+  opacity: 0;
+}
+.menu-icon.open .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    background-color: #003366;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    border-left: 2px solid #00bfff;
+    box-shadow: -2px 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+}
+/* Back to Dashboard Button */
+.back-container {
+  text-align: left; /* Align to left for easy navigation */
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #00bfff;  /* same as CTA button */
+  color: #001f4d;             /* dark text */
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.back-btn:hover {
+  background-color: #009acd;
+  transform: translateY(-2px);
+}
+

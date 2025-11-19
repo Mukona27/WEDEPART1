@@ -6,7 +6,16 @@
   <title>Contact | Code Smart</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- Hamburger Icon -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <!-- Navigation -->
   <nav>
     <a href="index.html">Home</a>
@@ -22,17 +31,68 @@
   </header>
 
   <div class="container">
-    <!-- Redirects to thankyou.html -->
-    <form action="thankyou.html" method="GET">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+
+    <!-- CONTACT FORM -->
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your full name" required>
+
+      <input type="email" name="email" placeholder="Your email address" required>
+
+      <!-- Message Type (required by rubric) -->
+      <select name="messageType" required>
+        <option value="">Select message type</option>
+        <option value="Complaint">Complaint</option>
+        <option value="Feedback">Feedback</option>
+        <option value="General Question">General Question</option>
+        <option value="Request">Request</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <textarea name="message" rows="6" placeholder="Write your full message here..." required></textarea>
+
       <button type="submit">Send Message</button>
     </form>
+
+    <!-- Output area (simulated email) -->
+    <div id="output" class="hidden"></div>
+
   </div>
 
   <footer>
     &copy; 2025 Code Smart
   </footer>
+
+  <!-- JavaScript Validation + Email Simulation -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = form.name.value;
+      const email = form.email.value;
+      const type = form.messageType.value;
+      const message = form.message.value;
+
+      // Display “compiled email”
+      output.innerHTML = `
+        <h2>Message Sent Successfully</h2>
+        <p>Your message has been sent to Code Smart. Below is a copy of the email:</p>
+
+        <div class="email-box">
+          <p><strong>From:</strong> ${name} (${email})</p>
+          <p><strong>Message Type:</strong> ${type}</p>
+          <p><strong>Full Message:</strong><br>${message}</p>
+        </div>
+
+        <p>We will get back to you within 48 hours.</p>
+      `;
+
+      output.classList.remove("hidden");
+      form.reset(); // Clear form
+    });
+  </script>
+
 </body>
 </html>

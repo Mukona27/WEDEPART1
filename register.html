@@ -2,49 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register | Code Smart</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tutorials.html">Tutorials</a>
-    <a href="login.html">Login</a>
-    <a href="register.html">Register</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="images/Coding Symbol in Blue.png" alt="Logo" class="logo" />
+      <span class="brand">Code Smart</span>
+    </div>
+    <div class="menu-icon" id="menu-icon">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div class="nav-right" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </div>
   </nav>
 
-  <!-- Registration Form -->
-  <div class="container">
-    <h1>Register</h1>
-    <form action="backend/register.php" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <label for="confirm-password">Confirm Password:</label>
-      <input type="password" id="confirm-password" name="confirm-password" required>
-
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <span class="toggle-password" onclick="togglePassword(this)">Show Password</span>
       <button type="submit">Register</button>
     </form>
-    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <p class="small-muted">Already have an account? <a href="login.html">Login here</a></p>
   </div>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Code Smart | Created by Mukona
-  </footer>
 
 </body>
 </html>
-
- 
